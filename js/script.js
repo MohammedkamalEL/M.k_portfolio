@@ -1,14 +1,3 @@
-/**
- * @copyright codewithsadee 2023
- * @author Sadee <codewithsadee24@gmail.com>
- */
-
-let preloader = document.querySelector("[data-preloader]");
-window.addEventListener("load",()=>{
-    preloader.classList.add("remove");
-    document.getElementById("img-prelod").classList.add("remove")
-})
-
 // "use strict";
 
 const $themeBtn = document.querySelector("[data-theme-btn]");
@@ -58,3 +47,18 @@ $tabBtn.forEach(item => {
     });
 });
 
+
+let preloder = document.querySelector('[data-preloader]')
+let content = document.getElementById("content");
+let topBar = document.getElementById("topbar");
+let loading_p = document.getElementById("loading_p");
+
+
+setTimeout(() => {
+    preloder.style.opacity = '0'
+    setTimeout(() => {
+        preloder.remove()
+    }, 100);
+    content.style.display = "block";
+    topBar.style.display = "flex"
+}, 4000)

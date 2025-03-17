@@ -32,21 +32,35 @@
 
     <link rel="shortcut icon" href="img/1.jpg" type="image/x-icon">
 
-
+    <script src="js/email.js" type="text/javascript"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+    </script>
+    <script type="text/javascript">
+        (function () {
+            emailjs.init({
+                publicKey: "huFPpRp_3RWM3JqUY",
+            });
+        })();
+    </script>
 
 </head>
 
 <body>
-    <div class="placholder" data-preloader>
-        <div class="cover">
-            <img src="assets/images/M.png" id="img-prelod" alt="">
+    <div class="con" data-preloader="data-preloader">
+        <div class="loading-p" id="loading_p">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" id="svg">
+                <path
+                    d="M22.7 33.4c13.5-4.1 28.1 1.1 35.9 12.9L224 294.3 389.4 46.3c7.8-11.7 22.4-17 35.9-12.9S448 49.9 448 64l0 384c0 17.7-14.3 32-32 32s-32-14.3-32-32l0-278.3L250.6 369.8c-5.9 8.9-15.9 14.2-26.6 14.2s-20.7-5.3-26.6-14.2L64 169.7 64 448c0 17.7-14.3 32-32 32s-32-14.3-32-32L0 64C0 49.9 9.2 37.5 22.7 33.4z" />
+            </svg>
+
+            <div class="name-container">
+                <div class="logo-name" id="logo-name">Devoloper</div>
+            </div>
         </div>
     </div>
 
-    <header class="topbar">
 
-
-
+    <header class="topbar" id="topbar">
         <a href="#" class="logo">
             <img src="assets/images/Logo_dark.png" alt="Mohammed-logo" class="dark" width="145" height="32">
             <img src="assets/images/Logo_light.png" alt="Mohammed-logo" class="light" width="145" height="32">
@@ -63,7 +77,7 @@
     </header>
 
 
-    <main>
+    <main id="content">
         <article>
             <section class="hero section">
                 <div class="container">
@@ -488,16 +502,13 @@
                             <div class="contact-form">
                                 <h3 class="title-large">Let’s Work Together.</h3>
 
-                                <form class="input-wrapper" action="mailto:zonaplaction123@gmail.com"
-                                    method="POST">
-                                    <input type="text" name="name" placeholder="Name*" required class="input-field">
-                                    <input type="email" name="email" placeholder="Email*" required class="input-field">
-                                    <input type="hidden" name="_subject" placeholder="Subject" value="New Email!">
-                                    <input type="hidden" name="_captcha" value="false">
-                                    <textarea name="message" placeholder="Message*" required
+                                <form class="input-wrapper"  method="POST">
+                                    <input type="text" name="name" id="name" placeholder="Name*" required class="input-field">
+                                    <input type="email" name="email" id="email" placeholder="Email*" required class="input-field">
+                                    <textarea name="message" placeholder="Message*" id="Message" required
                                         class="textarea"></textarea>
-                                    <button class="btn">
-                                        <span class="label-large" type="submit" aria-label="button">Send Message</span>
+                                    <button class="btn" onclick="sendEmail()">
+                                        <span class="label-large"  aria-label="button">Send Message</span>
                                         <div class="state-layer"></div>
                                     </button>
                                 </form>
