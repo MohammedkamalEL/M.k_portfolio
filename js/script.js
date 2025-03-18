@@ -62,3 +62,14 @@ setTimeout(() => {
     content.style.display = "block";
     topBar.style.display = "flex"
 }, 4000)
+
+function SendMail() {
+    var params = {
+        from_name: document.getElementById("fullName").value,
+        email_id: document.getElementById("email_id").value,
+        message: document.getElementById("message").value
+    }
+    emailjs.send("service_ck7v1b8", "template_e3pp6bv", params).then(function (res) {
+        alert("success and thanks Abo Rashied 🌹" );
+    })
+}

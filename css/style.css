@@ -111,6 +111,19 @@
   --outline-variant: var(--outline-variant-dark);
 }
 
+@keyframes apper {
+  from {
+    opacity: 0;
+    scale: .5;
+  }
+
+  to {
+    opacity: 1;
+    scale: 1;
+  }
+}
+
+
 @media (prefer-reduced-motion: no-preference) {
   :root {
 
@@ -490,6 +503,9 @@ body {
   border-radius: 15px;
   display: grid;
   gap: 12px;
+  animation: apper linear;
+  animation-timeline: view();
+  animation-range: entry 0;
   /* --state-layer-bg : var(--on-surface); */
 }
 
@@ -599,10 +615,13 @@ textarea {
 .hero-baner {
   width: 240px;
   border-radius: 50%;
+  animation: apper .5s linear;
 }
 
 .hero-content {
   max-width: 500px;
+  animation: apper .5s linear;
+
 }
 
 .hero .section-subtitle {
@@ -631,6 +650,7 @@ textarea {
   padding: 16px;
   margin-block-start: 24px;
   border-radius: 15px;
+  animation: apper .5s linear;
 }
 
 .about-card .card-title {
@@ -671,6 +691,7 @@ textarea {
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 24px;
   margin-block: 24px;
+  animation: apper .5s linear;
 }
 
 .resume-card {
@@ -699,6 +720,9 @@ textarea {
   gap: 8px;
   padding: 12px;
   border-radius: 5px;
+  animation: apper linear;
+  animation-timeline: view();
+  animation-range: entry 0;
 }
 
 .resume-bottom-item .icone {
@@ -723,7 +747,7 @@ textarea {
 }
 
 .contact-info {
-  margin-block-end: 24px;
+  animation: apper .5s linear;
 }
 
 .contact-info-list {
@@ -781,6 +805,7 @@ textarea {
   padding: 16px;
   margin-block-end: 16px;
   border-radius: 5px;
+  animation: apper .5s linear;
 }
 
 /*-----------------------------------*\
@@ -868,7 +893,8 @@ textarea {
   text-align: center;
   margin: auto;
 }
-[data-theme="light"] #Download{
+
+[data-theme="light"] #Download {
   background-color: rgb(120, 100, 253);
 
 }
